@@ -1,0 +1,55 @@
+# macOS system files
+.DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# VSCode settings
+.vscode/
+.history/
+
+# Build output
+dist/
+build/
+out/
+
+# Coverage reports
+coverage/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Next.js
+.next/
+
+# React Native
+ios/build/
+android/app/build/
+*.keystore
+
+# Expo
+.expo/
+.expo-shared/
+
+# Misc
+*.swp
+*.swo
+.idea/
+*.bak
+*.tmp
