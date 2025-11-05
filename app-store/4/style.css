@@ -36,16 +36,15 @@ body {
 
 /* A/B Testing Variables - Change these for different ad variations */
 :root {
-  --primary-color: #ff5722;
-  --primary-color-hover: #e64a19;
-  --primary-color-light: #ff7043;
-  --app-icon-path: "./assets/1.png";
+  --primary-color: #11b561;
+  --primary-color-hover: #0ea54e;
+  --primary-color-light: #2dd88f;
 }
 
 .dark {
-  --primary-color: #ff6e40;
-  --primary-color-hover: #ff5722;
-  --primary-color-light: #ff8a65;
+  --primary-color: #11b561;
+  --primary-color-hover: #0ea54e;
+  --primary-color-light: #2dd88f;
 }
 
 /* Dark mode base text color */
