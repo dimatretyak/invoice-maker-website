@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <title>Invoice365 on the App Store</title>
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Invoice365 - Create professional estimates and invoices. Easily manage clients, track payments, and export PDFs." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Invoice365 on the App Store" />
+  <meta property="og:description"
+    content="Create professional estimates and invoices with Invoice365. Easily manage clients, track payments, and export PDFs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://invoice365.app/assets/images/og.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Invoice365 on the App Store" />
+  <meta name="twitter:description"
+    content="Create professional estimates and invoices with Invoice365. Easily manage clients, track payments, and export PDFs." />
+  <meta name="twitter:image" content="https://invoice365.app/assets/images/og.png" />
+
+  <link href="./src/output.css" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8KHMM0GPM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-V8KHMM0GPM');
+  </script>
+
+  <style>
+    /* A/B Testing Variables - Change these for different ad variations */
+    /* Primary Brand Color - Test different colors for better CTR */
+    :root {
+      --primary-color: #007AFF; /* iOS Blue - Change to test: #FF5722 (Orange), #34C759 (Green), etc. */
+      --primary-color-dark: #0A84FF;
+      --primary-color-hover: #0051D5;
+    }
+
+    .app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      /* Change app icon image path for A/B testing different icons */
+    }
+
+    @media (min-width: 768px) {
+      .app-icon {
+        width: 150px;
+        height: 150px;
+        border-radius: 32px;
+      }
+    }
+
+    .screenshot {
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      height: auto;
+    }
+
+    .rating-star {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFD700'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E") no-repeat center;
+      background-size: contain;
+    }
+
+    .dark .rating-star {
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFD700'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E") no-repeat center;
+      background-size: contain;
+    }
+
+    .theme-toggle {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle" class="fixed top-4 right-4 z-50 p-3 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 theme-toggle" aria-label="Toggle theme">
+    <svg id="theme-icon-light" class="w-6 h-6 text-gray-800 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+    <svg id="theme-icon-dark" class="w-6 h-6 text-gray-200 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+  </button>
+
+  <!-- Main Container -->
+  <div class="min-h-screen">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <a href="https://invoice365.app" class="text-2xl font-bold text-gray-900 dark:text-white">Invoice365</a>
+          <a href="https://apps.apple.com/US/app/id6743351285" target="_blank"
+            class="px-6 py-2 bg-[#007AFF] dark:bg-[#0A84FF] text-white rounded-full font-semibold hover:bg-[#0051D5] dark:hover:bg-[#0051D5] transition-colors">
+            View on App Store
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-8 md:py-12 px-4">
+      <div class="container mx-auto max-w-6xl">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+          <!-- App Icon - Change src for A/B testing different app icons -->
+          <div class="flex-shrink-0 mx-auto md:mx-0">
+            <img src="/assets/images/favicon/apple-touch-icon.png" alt="Invoice365 App Icon" class="app-icon" id="app-icon">
+          </div>
+
+          <!-- App Info -->
+          <div class="flex-1 text-center md:text-left">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">Invoice365</h1>
+            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-4">Create Estimates & Invoices</p>
+
+            <!-- Rating -->
+            <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
+              <div class="flex items-center gap-1">
+                <span class="rating-star"></span>
+                <span class="rating-star"></span>
+                <span class="rating-star"></span>
+                <span class="rating-star"></span>
+                <span class="rating-star"></span>
+              </div>
+              <span class="text-lg font-semibold text-gray-900 dark:text-white">4.9</span>
+              <span class="text-sm text-gray-600 dark:text-gray-400">(245 ratings)</span>
+            </div>
+
+            <!-- Download Button -->
+            <div class="mb-6">
+              <a href="https://apps.apple.com/US/app/id6743351285" target="_blank"
+                class="inline-flex items-center gap-2 px-8 py-4 bg-[#007AFF] dark:bg-[#0A84FF] text-white rounded-2xl font-semibold text-lg hover:bg-[#0051D5] dark:hover:bg-[#0051D5] transition-all shadow-lg hover:shadow-xl">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C1.79 15.25 2.18 8.59 9.5 8.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.9c-.15-2.23 1.66-4.14 3.74-4.66 1.84-.58 4.18.39 5.49 2.3-4.92.48-8.24-2.44-9.23-5.96-3.89.18-6.71 2.72-7.03 5.87-3.46.24-5.96-2.67-6.07-3.04C.06 2.04-.56 1.81.47 1.25c.08-.04.18-.09.28-.14C2.69.02 5.59-.68 8.34.56c.87.39 1.68.93 2.38 1.54-.18-.39-.34-.79-.47-1.21.12-.06.24-.11.36-.17 2.12-.88 4.34-1.22 6.51-.9.1.05.19.1.27.15 1.03.56 1.55.79 1.08 1.35-.04.05-.09.1-.14.15z"/>
+                </svg>
+                GET
+              </a>
+            </div>
+
+            <!-- App Details -->
+            <div class="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
+              <span>Business</span>
+              <span>•</span>
+              <span>#1 in Business</span>
+              <span>•</span>
+              <span>4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="py-8 px-4 bg-gray-50 dark:bg-gray-800/50">
+      <div class="container mx-auto max-w-6xl">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center md:text-left text-gray-900 dark:text-white">Preview</h2>
+        <div class="flex justify-center">
+          <img src="/assets/images/screenshots/iOS.png" alt="Invoice365 App Screenshot" class="screenshot max-w-full md:max-w-md">
+        </div>
+      </div>
+    </section>
+
+    <!-- Description Section -->
+    <section class="py-8 px-4">
+      <div class="container mx-auto max-w-6xl">
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white">Description</h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+            Create professional estimates and invoices with Invoice365. Easily manage clients, track payments, and export PDFs on iOS, Android and Web.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+            Quickly create professional estimates and invoices, convert them to PDF, and send directly to your clients — all from your phone or tablet.
+          </p>
+
+          <h3 class="text-xl md:text-2xl font-semibold mt-8 mb-4 text-gray-900 dark:text-white">Key Features:</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            <li>Create and manage estimates and invoices on the go</li>
+            <li>Instantly convert documents into PDFs and print if needed</li>
+            <li>Send estimates and invoices via email or other apps effortlessly</li>
+            <li>Save frequently used items, products or services for future use</li>
+            <li>Easily manage and store client information for quick access</li>
+            <li>Monitor payment statuses and stay updated on your invoices</li>
+            <li>Manage multiple businesses and quickly switch between them</li>
+            <li>Upload your business logo to display it on every invoice and estimate</li>
+            <li>Enjoy a seamless experience on both iPhone and iPad devices</li>
+            <li>Convert your estimates to invoices quickly and easily</li>
+            <li>Automatically calculate taxes based on predefined rates and regions</li>
+            <li>Handle invoices in different currencies</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-8 px-4 bg-gray-50 dark:bg-gray-800/50">
+      <div class="container mx-auto max-w-6xl">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Ratings and Reviews</h2>
+          <div class="text-right">
+            <div class="text-3xl font-bold text-gray-900 dark:text-white">4.9</div>
+            <div class="flex items-center gap-1 justify-end">
+              <span class="rating-star"></span>
+              <span class="rating-star"></span>
+              <span class="rating-star"></span>
+              <span class="rating-star"></span>
+              <span class="rating-star"></span>
+            </div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">245 Ratings</div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Review 1 -->
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FF5722] to-orange-600 flex items-center justify-center text-white font-bold text-lg">
+                AB
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="font-semibold text-gray-900 dark:text-white">Alex B.</span>
+                  <div class="flex items-center gap-1">
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                  </div>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 mb-2">"Invoice365 helped me send invoices in just a few minutes. I love how intuitive and quick it is!"</p>
+                <span class="text-sm text-gray-500 dark:text-gray-400">2 days ago</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-lg">
+                ML
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="font-semibold text-gray-900 dark:text-white">Maria L.</span>
+                  <div class="flex items-center gap-1">
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                  </div>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 mb-2">"Amazing app! Easy to track my payments and manage multiple businesses from one place."</p>
+                <span class="text-sm text-gray-500 dark:text-gray-400">5 days ago</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-lg">
+                CT
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="font-semibold text-gray-900 dark:text-white">Chris T.</span>
+                  <div class="flex items-center gap-1">
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                  </div>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 mb-2">"Very clean design, and so easy to customize the UI colors to match my brand. Highly recommend!"</p>
+                <span class="text-sm text-gray-500 dark:text-gray-400">1 week ago</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white font-bold text-lg">
+                OM
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="font-semibold text-gray-900 dark:text-white">Olivia M.</span>
+                  <div class="flex items-center gap-1">
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                    <span class="rating-star"></span>
+                  </div>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 mb-2">"Converting estimates to invoices is seamless. It literally saves me hours every month."</p>
+                <span class="text-sm text-gray-500 dark:text-gray-400">2 weeks ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Information Section -->
+    <section class="py-8 px-4">
+      <div class="container mx-auto max-w-6xl">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Information</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Category</h3>
+              <p class="text-gray-700 dark:text-gray-300">Business</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Compatibility</h3>
+              <p class="text-gray-700 dark:text-gray-300">iPhone, iPad</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Requires iOS 15.0 or later</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Languages</h3>
+              <p class="text-gray-700 dark:text-gray-300">English</p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Age Rating</h3>
+              <p class="text-gray-700 dark:text-gray-300">4+</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Made for Ages 4 and up</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Price</h3>
+              <p class="text-gray-700 dark:text-gray-300">Free</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Developer</h3>
+              <p class="text-gray-700 dark:text-gray-300">Invoice365 Team</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Copyright</h3>
+              <p class="text-gray-700 dark:text-gray-300">© 2025 Invoice365</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download CTA Section -->
+    <section class="py-12 px-4 bg-gradient-to-br from-[#007AFF] to-[#0051D5] dark:from-[#0A84FF] dark:to-[#0051D5]">
+      <div class="container mx-auto max-w-4xl text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get Invoice365 Today</h2>
+        <p class="text-xl text-white/90 mb-8">Start creating professional invoices and estimates in minutes</p>
+        <a href="https://apps.apple.com/US/app/id6743351285" target="_blank"
+          class="inline-flex items-center gap-3 px-10 py-5 bg-white text-[#007AFF] rounded-2xl font-bold text-xl hover:bg-gray-100 transition-all shadow-2xl hover:shadow-3xl transform hover:scale-105">
+          <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C1.79 15.25 2.18 8.59 9.5 8.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.9c-.15-2.23 1.66-4.14 3.74-4.66 1.84-.58 4.18.39 5.49 2.3-4.92.48-8.24-2.44-9.23-5.96-3.89.18-6.71 2.72-7.03 5.87-3.46.24-5.96-2.67-6.07-3.04C.06 2.04-.56 1.81.47 1.25c.08-.04.18-.09.28-.14C2.69.02 5.59-.68 8.34.56c.87.39 1.68.93 2.38 1.54-.18-.39-.34-.79-.47-1.21.12-.06.24-.11.36-.17 2.12-.88 4.34-1.22 6.51-.9.1.05.19.1.27.15 1.03.56 1.55.79 1.08 1.35-.04.05-.09.1-.14.15z"/>
+          </svg>
+          Download on the App Store
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 px-4 border-t border-gray-200 dark:border-gray-800">
+      <div class="container mx-auto max-w-6xl text-center text-gray-600 dark:text-gray-400">
+        <p>&copy; 2025 Invoice365. All rights reserved.</p>
+        <div class="mt-4 space-x-4">
+          <a href="/privacy-policy.html" class="hover:text-[#007AFF] dark:hover:text-[#0A84FF] transition">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+      html.classList.add('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      const theme = html.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+    });
+
+    // Detect system preference on first load
+    if (!localStorage.getItem('theme')) {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+  </script>
+</body>
+
+</html>
