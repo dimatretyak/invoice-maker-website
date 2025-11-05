@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Invoice365 - Invoice & Estimate App for iOS</title>
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Invoice365" />
+  <link rel="manifest" href="/assets/images/favicon/site.webmanifest" />
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Create professional estimates and invoices with Invoice365. Easily manage clients, track payments, and export PDFs on iOS" />
+  <meta name="keywords"
+    content="invoice app, estimate app, billing, invoicing tool, iOS, small business, freelance invoicing, Invoice365" />
+  <meta name="author" content="Invoice365 Team" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Invoice365 - Invoice & Estimate App for iOS" />
+  <meta property="og:description"
+    content="Create professional estimates and invoices. Manage clients, track payments, and export PDFs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://invoice365.app/assets/images/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Invoice365 - Invoice & Estimate App" />
+  <meta name="twitter:description"
+    content="Create professional estimates and invoices. Manage clients, track payments, and export PDFs." />
+  <meta name="twitter:image" content="https://invoice365.app/assets/images/og.png" />
+
+  <link href="./src/output.css" rel="stylesheet">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Invoice365",
+      "operatingSystem": "iOS",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "245"
+      },
+      "downloadUrl": "https://apps.apple.com/US/app/id6743351285",
+      "screenshot": "https://invoice365.app/assets/images/screenshots/iOS.png",
+      "description": "Create professional estimates and invoices, export to PDF, manage clients and track payments.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Invoice365 Team"
+      }
+    }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8KHMM0GPM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-V8KHMM0GPM');
+  </script>
+
+  <style>
+    /* Custom styles for App Store look */
+    .star-rating {
+      color: #FF9500;
+    }
+
+    .app-icon {
+      border-radius: 22.5%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .screenshot-container {
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .screenshot-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .screenshot-item {
+      scroll-snap-align: start;
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+      .dark\:bg-black {
+        background-color: #000000;
+      }
+
+      .dark\:bg-gray-900 {
+        background-color: #1c1c1e;
+      }
+
+      .dark\:bg-gray-800 {
+        background-color: #2c2c2e;
+      }
+
+      .dark\:text-white {
+        color: #ffffff;
+      }
+
+      .dark\:text-gray-300 {
+        color: #d1d1d6;
+      }
+
+      .dark\:text-gray-400 {
+        color: #8e8e93;
+      }
+
+      .dark\:border-gray-700 {
+        border-color: #3a3a3c;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-black text-gray-900 dark:text-white">
+  <!-- Header Section -->
+  <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-200 dark:border-gray-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <div class="flex items-center justify-between">
+        <a href="https://invoice365.app" class="text-xl font-semibold text-blue-600 dark:text-blue-400">
+          Invoice365
+        </a>
+        <a href="https://apps.apple.com/US/app/id6743351285" target="_blank"
+          class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-semibold transition">
+          Get
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- App Header Section -->
+    <section class="flex flex-col md:flex-row gap-6 mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
+      <!-- App Icon -->
+      <div class="flex-shrink-0">
+        <img src="./assets/images/app-icon.png" alt="Invoice365 App Icon"
+          class="app-icon w-28 h-28 md:w-32 md:h-32" 
+          onerror="this.src='./assets/images/favicon/apple-touch-icon.png'" />
+      </div>
+
+      <!-- App Info -->
+      <div class="flex-1">
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">Invoice365</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">Create Estimates & Invoices</p>
+
+        <!-- Rating & Info -->
+        <div class="flex flex-wrap items-center gap-4 md:gap-8 text-sm mb-6">
+          <div class="text-center">
+            <div class="text-2xl font-semibold">4.9</div>
+            <div class="star-rating text-xs">★★★★★</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">245 Ratings</div>
+          </div>
+          <div class="text-center">
+            <div class="text-xs text-gray-500 dark:text-gray-400 uppercase">Age</div>
+            <div class="text-xl font-semibold">4+</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">Years Old</div>
+          </div>
+          <div class="text-center">
+            <div class="text-xs text-gray-500 dark:text-gray-400 uppercase">Chart</div>
+            <div class="text-xl font-semibold">#12</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">Business</div>
+          </div>
+          <div class="text-center">
+            <div class="text-xs text-gray-500 dark:text-gray-400 uppercase">Developer</div>
+            <div class="text-xl font-semibold">📱</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">Invoice365</div>
+          </div>
+        </div>
+
+        <!-- Download Button -->
+        <a href="https://apps.apple.com/US/app/id6743351285" target="_blank"
+          class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-base font-semibold transition shadow-md">
+          Download on App Store
+        </a>
+      </div>
+    </section>
+
+    <!-- What's New Section -->
+    <section class="mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-bold mb-4">What's New</h2>
+      <div class="text-sm text-gray-500 dark:text-gray-400 mb-3">Version 1.0.0 • 2 weeks ago</div>
+      <p class="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+        Welcome to Invoice365! Create professional invoices and estimates in seconds. This initial release includes:
+        <br><br>
+        • Quick invoice and estimate creation<br>
+        • PDF export and sharing<br>
+        • Client management<br>
+        • Payment tracking<br>
+        • Multiple business support<br>
+        • Tax calculations<br>
+        • Multi-currency support
+      </p>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-bold mb-4">Preview</h2>
+      <div class="screenshot-container flex gap-4 overflow-x-auto pb-4">
+        <div class="screenshot-item flex-shrink-0 w-64 md:w-72">
+          <img src="./assets/images/screenshots/screenshot-1.png" alt="Manage Clients & Items"
+            class="w-full rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700" loading="lazy" 
+            onerror="this.src='./assets/images/screenshots/iOS.png'" />
+          <p class="text-sm text-center mt-2 text-gray-600 dark:text-gray-400">Manage Clients & Items</p>
+        </div>
+        <div class="screenshot-item flex-shrink-0 w-64 md:w-72">
+          <img src="./assets/images/screenshots/screenshot-2.png" alt="Create Estimates"
+            class="w-full rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700" loading="lazy" 
+            onerror="this.src='./assets/images/screenshots/iOS.png'" />
+          <p class="text-sm text-center mt-2 text-gray-600 dark:text-gray-400">Create Estimates</p>
+        </div>
+        <div class="screenshot-item flex-shrink-0 w-64 md:w-72">
+          <img src="./assets/images/screenshots/screenshot-3.png" alt="Payment History"
+            class="w-full rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700" loading="lazy" 
+            onerror="this.src='./assets/images/screenshots/iOS.png'" />
+          <p class="text-sm text-center mt-2 text-gray-600 dark:text-gray-400">Payment History & Status</p>
+        </div>
+        <div class="screenshot-item flex-shrink-0 w-64 md:w-72">
+          <img src="./assets/images/screenshots/screenshot-4.png" alt="Export to PDF"
+            class="w-full rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700" loading="lazy" 
+            onerror="this.src='./assets/images/screenshots/iOS.png'" />
+          <p class="text-sm text-center mt-2 text-gray-600 dark:text-gray-400">Print & Export to PDF</p>
+        </div>
+        <div class="screenshot-item flex-shrink-0 w-64 md:w-72">
+          <img src="./assets/images/screenshots/screenshot-5.png" alt="Multiple Businesses"
+            class="w-full rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700" loading="lazy" 
+            onerror="this.src='./assets/images/screenshots/iOS.png'" />
+          <p class="text-sm text-center mt-2 text-gray-600 dark:text-gray-400">Multiple Businesses</p>
+        </div>
+        <div class="screenshot-item flex-shrink-0 w-64 md:w-72">
+          <img src="./assets/images/screenshots/screenshot-6.png" alt="iPad & iPhone Support"
+            class="w-full rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700" loading="lazy" 
+            onerror="this.src='./assets/images/screenshots/iOS.png'" />
+          <p class="text-sm text-center mt-2 text-gray-600 dark:text-gray-400">iPad & iPhone Support</p>
+        </div>
+        <div class="screenshot-item flex-shrink-0 w-64 md:w-72">
+          <img src="./assets/images/screenshots/screenshot-7.png" alt="Quick Invoicing"
+            class="w-full rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700" loading="lazy" 
+            onerror="this.src='./assets/images/screenshots/iOS.png'" />
+          <p class="text-sm text-center mt-2 text-gray-600 dark:text-gray-400">Quick & Easy Invoicing</p>
+        </div>
+        <div class="screenshot-item flex-shrink-0 w-64 md:w-72">
+          <img src="./assets/images/screenshots/screenshot-8.png" alt="Make Invoices on the Go"
+            class="w-full rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700" loading="lazy" 
+            onerror="this.src='./assets/images/screenshots/iOS.png'" />
+          <p class="text-sm text-center mt-2 text-gray-600 dark:text-gray-400">Make Invoices on the Go</p>
+        </div>
+        <div class="screenshot-item flex-shrink-0 w-64 md:w-72">
+          <img src="./assets/images/screenshots/screenshot-9.png" alt="Get Paid Faster"
+            class="w-full rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700" loading="lazy" 
+            onerror="this.src='./assets/images/screenshots/iOS.png'" />
+          <p class="text-sm text-center mt-2 text-gray-600 dark:text-gray-400">Get Paid Faster</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Description Section -->
+    <section class="mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-bold mb-4">About This App</h2>
+      <div class="text-base text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Invoice365 is the ultimate invoicing solution for freelancers, contractors, and small businesses. Create
+          professional estimates and invoices in seconds, right from your iPhone or iPad.
+        </p>
+        <p class="font-semibold text-lg mt-6 mb-3">Key Features:</p>
+        <ul class="space-y-2 ml-4">
+          <li>📄 <strong>Estimates & Invoices</strong> - Create and manage professional documents on the go</li>
+          <li>🖨️ <strong>PDF Export & Printing</strong> - Instantly convert to PDF and print if needed</li>
+          <li>📬 <strong>Easy Sharing</strong> - Send via email or messaging apps effortlessly</li>
+          <li>💾 <strong>Save Items & Services</strong> - Reuse frequently used items for faster invoicing</li>
+          <li>👥 <strong>Client Management</strong> - Store and manage client information easily</li>
+          <li>💳 <strong>Payment Tracking</strong> - Monitor payment statuses and history</li>
+          <li>🏢 <strong>Multiple Businesses</strong> - Manage and switch between multiple businesses</li>
+          <li>🎨 <strong>Business Logo</strong> - Add your logo to every invoice and estimate</li>
+          <li>📱 <strong>iPhone & iPad Support</strong> - Seamless experience on all devices</li>
+          <li>🔄 <strong>Estimate to Invoice</strong> - Convert estimates to invoices quickly</li>
+          <li>💵 <strong>Tax Calculation</strong> - Automatic tax calculations</li>
+          <li>💱 <strong>Multi-Currency</strong> - Support for multiple currencies</li>
+        </ul>
+        <p class="mt-6">
+          <strong>Perfect for:</strong> Freelancers, Contractors, Plumbers, Electricians, Consultants, Small Business
+          Owners, and anyone who needs to create professional invoices quickly.
+        </p>
+        <p class="mt-4">
+          Download Invoice365 today and simplify your invoicing process!
+        </p>
+      </div>
+    </section>
+
+    <!-- Ratings & Reviews Section -->
+    <section class="mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold">Ratings & Reviews</h2>
+        <a href="https://apps.apple.com/US/app/id6743351285" target="_blank"
+          class="text-blue-600 dark:text-blue-400 text-sm font-semibold">See All</a>
+      </div>
+
+      <!-- Overall Rating -->
+      <div class="flex items-center gap-8 mb-8">
+        <div class="text-center">
+          <div class="text-5xl font-bold mb-2">4.9</div>
+          <div class="star-rating text-xl mb-1">★★★★★</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">out of 5</div>
+        </div>
+        <div class="flex-1">
+          <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">245 Ratings</div>
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <div class="star-rating text-xs">★★★★★</div>
+              <div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                <div class="bg-gray-400 dark:bg-gray-500 h-1.5 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="star-rating text-xs">★★★★☆</div>
+              <div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                <div class="bg-gray-400 dark:bg-gray-500 h-1.5 rounded-full" style="width: 12%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="star-rating text-xs">★★★☆☆</div>
+              <div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                <div class="bg-gray-400 dark:bg-gray-500 h-1.5 rounded-full" style="width: 2%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="star-rating text-xs">★★☆☆☆</div>
+              <div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                <div class="bg-gray-400 dark:bg-gray-500 h-1.5 rounded-full" style="width: 1%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="star-rating text-xs">★☆☆☆☆</div>
+              <div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                <div class="bg-gray-400 dark:bg-gray-500 h-1.5 rounded-full" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews -->
+      <div class="space-y-6">
+        <!-- Review 1 -->
+        <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <div class="font-semibold">Alex B.</div>
+              <div class="star-rating text-sm">★★★★★</div>
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">2 weeks ago</div>
+          </div>
+          <div class="font-semibold mb-2">Perfect for freelancers!</div>
+          <p class="text-gray-700 dark:text-gray-300">
+            Invoice365 helped me send invoices in just a few minutes. I love how intuitive and quick it is! The PDF
+            export feature is fantastic.
+          </p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <div class="font-semibold">Maria L.</div>
+              <div class="star-rating text-sm">★★★★★</div>
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">1 week ago</div>
+          </div>
+          <div class="font-semibold mb-2">Amazing app!</div>
+          <p class="text-gray-700 dark:text-gray-300">
+            Easy to track my payments and manage multiple businesses from one place. The interface is clean and
+            professional.
+          </p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <div class="font-semibold">Chris T.</div>
+              <div class="star-rating text-sm">★★★★★</div>
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">3 days ago</div>
+          </div>
+          <div class="font-semibold mb-2">Highly recommend!</div>
+          <p class="text-gray-700 dark:text-gray-300">
+            Very clean design, and so easy to customize the UI colors to match my brand. This app saves me so much time
+            every week.
+          </p>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <div class="font-semibold">Olivia M.</div>
+              <div class="star-rating text-sm">★★★★★</div>
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">5 days ago</div>
+          </div>
+          <div class="font-semibold mb-2">Saves me hours!</div>
+          <p class="text-gray-700 dark:text-gray-300">
+            Converting estimates to invoices is seamless. It literally saves me hours every month. Best invoicing app
+            I've used!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Information Section -->
+    <section class="mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-bold mb-6">Information</h2>
+      <div class="space-y-4">
+        <div class="flex justify-between py-3 border-b border-gray-100 dark:border-gray-800">
+          <div class="text-gray-600 dark:text-gray-400">Provider</div>
+          <div class="text-right font-medium">Invoice365 Team</div>
+        </div>
+        <div class="flex justify-between py-3 border-b border-gray-100 dark:border-gray-800">
+          <div class="text-gray-600 dark:text-gray-400">Size</div>
+          <div class="text-right font-medium">12.5 MB</div>
+        </div>
+        <div class="flex justify-between py-3 border-b border-gray-100 dark:border-gray-800">
+          <div class="text-gray-600 dark:text-gray-400">Category</div>
+          <div class="text-right font-medium">Business</div>
+        </div>
+        <div class="flex justify-between py-3 border-b border-gray-100 dark:border-gray-800">
+          <div class="text-gray-600 dark:text-gray-400">Compatibility</div>
+          <div class="text-right font-medium">iPhone, iPad</div>
+        </div>
+        <div class="flex justify-between py-3 border-b border-gray-100 dark:border-gray-800">
+          <div class="text-gray-600 dark:text-gray-400">Languages</div>
+          <div class="text-right font-medium">English</div>
+        </div>
+        <div class="flex justify-between py-3 border-b border-gray-100 dark:border-gray-800">
+          <div class="text-gray-600 dark:text-gray-400">Age Rating</div>
+          <div class="text-right font-medium">4+</div>
+        </div>
+        <div class="flex justify-between py-3 border-b border-gray-100 dark:border-gray-800">
+          <div class="text-gray-600 dark:text-gray-400">Price</div>
+          <div class="text-right font-medium">Free</div>
+        </div>
+        <div class="flex justify-between py-3 border-b border-gray-100 dark:border-gray-800">
+          <div class="text-gray-600 dark:text-gray-400">In-App Purchases</div>
+          <div class="text-right font-medium">Yes</div>
+        </div>
+        <div class="flex justify-between py-3">
+          <div class="text-gray-600 dark:text-gray-400">Developer Website</div>
+          <div class="text-right">
+            <a href="https://invoice365.app" target="_blank"
+              class="text-blue-600 dark:text-blue-400 font-medium">invoice365.app</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="mb-8 pb-8">
+      <h2 class="text-2xl font-bold mb-6">App Privacy</h2>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">
+        The developer has indicated that this app's privacy practices may include handling of data as described below.
+      </p>
+      <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+        <div class="font-semibold mb-3">Data Not Collected</div>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          The developer does not collect any data from this app. All your data is stored locally on your device.
+        </p>
+      </div>
+      <a href="/privacy-policy.html" target="_blank"
+        class="inline-block mt-4 text-blue-600 dark:text-blue-400 text-sm font-semibold">
+        Privacy Policy
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer CTA -->
+  <footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h3 class="text-3xl font-bold mb-4">Get Started Today</h3>
+      <p class="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
+        Download Invoice365 and start creating professional invoices in minutes
+      </p>
+      <a href="https://apps.apple.com/US/app/id6743351285" target="_blank"
+        class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-semibold transition shadow-lg">
+        Download on App Store
+      </a>
+      <div class="mt-8 text-sm text-gray-500 dark:text-gray-400">
+        &copy; 2025 Invoice365. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
