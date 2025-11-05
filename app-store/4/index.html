@@ -42,25 +42,20 @@
     gtag('js', new Date());
     gtag('config', 'G-V8KHMM0GPM');
   </script>
+
+  <!-- Apply dark mode class immediately to prevent FOUC (Flash of Unstyled Content) -->
+  <script>
+    // Apply system theme on page load - inline in head to avoid FOUC
+    // Based on Tailwind CSS dark mode documentation: https://tailwindcss.com/docs/dark-mode
+    (function () {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
 </head>
 
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-  <!-- Theme Toggle Button -->
-  <button id="theme-toggle"
-    class="fixed bottom-4 right-4 z-50 p-3 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 theme-toggle shadow-lg"
-    aria-label="Toggle theme">
-    <svg id="theme-icon-light" class="w-6 h-6 text-gray-800 dark:hidden" fill="none" stroke="currentColor"
-      viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-    </svg>
-    <svg id="theme-icon-dark" class="w-6 h-6 text-gray-200 hidden dark:block" fill="none" stroke="currentColor"
-      viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-    </svg>
-  </button>
-
   <!-- Lightbox Modal -->
   <div id="lightbox" class="lightbox">
     <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
@@ -549,47 +544,28 @@
 
     let currentImageIndex = 0;
 
-    // Dark Mode Functionality - Auto-detect system theme
-    const themeToggle = document.getElementById('theme-toggle');
+    // Dark Mode Functionality - Auto-detect and apply system theme
+    // Based on Tailwind CSS dark mode documentation: https://tailwindcss.com/docs/dark-mode
     const html = document.documentElement;
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
     // Function to apply theme based on system preference
     function applySystemTheme() {
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      if (darkModeMediaQuery.matches) {
         html.classList.add('dark');
       } else {
         html.classList.remove('dark');
       }
     }
 
-    // Check for manually saved theme preference
-    const savedTheme = localStorage.getItem('theme-manual');
-
-    if (savedTheme) {
-      // User has manually set a theme, use it
-      if (savedTheme === 'dark') {
-        html.classList.add('dark');
-      } else {
-        html.classList.remove('dark');
-      }
+    // Listen for system theme changes and apply automatically
+    // Using addEventListener with proper browser support
+    if (darkModeMediaQuery.addEventListener) {
+      darkModeMediaQuery.addEventListener('change', applySystemTheme);
     } else {
-      // No manual preference, use system theme
-      applySystemTheme();
+      // Fallback for older browsers
+      darkModeMediaQuery.addListener(applySystemTheme);
     }
-
-    // Theme toggle button handler - saves manual preference
-    themeToggle.addEventListener('click', () => {
-      html.classList.toggle('dark');
-      const theme = html.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme-manual', theme);
-    });
-
-    // Listen for system theme changes - only if no manual preference is set
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem('theme-manual')) {
-        applySystemTheme();
-      }
-    });
 
     // Lightbox Functionality
     const lightbox = document.getElementById('lightbox');

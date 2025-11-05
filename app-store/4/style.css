@@ -7,16 +7,29 @@
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* A/B Testing Variables - Change these for different ad variations */
@@ -41,10 +54,12 @@ body.dark {
 /* Utility Classes */
 .container {
   width: 100%;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+  box-sizing: border-box;
 }
 
 @media (min-width: 640px) {
@@ -181,6 +196,7 @@ body.dark {
   scroll-snap-align: start;
   flex-shrink: 0;
   width: 16rem;
+  max-width: calc(100vw - 2rem);
 }
 
 /* Lightbox Styles */
@@ -1010,11 +1026,29 @@ body.dark {
 /* Min Height */
 .min-h-screen {
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Overflow */
 .overflow-x-auto {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent horizontal overflow */
+section,
+header,
+footer {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Gradient Backgrounds */
