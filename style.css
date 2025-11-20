@@ -1,0 +1,17 @@
+.qr-code-container {
+  margin-top: 70px;
+}
+
+.qr-code-container span {
+  color: #4a5565;
+}
+
+.get-link-by-email {
+  border: 1px solid #ff5722;
+  color: #ff5722;
+}
+
+.get-link-by-email:hover {
+  background-color: #ff5722;
+  color: #fff;
+}

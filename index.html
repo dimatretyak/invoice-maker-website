@@ -10,6 +10,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Invoice Maker" />
   <link rel="manifest" href="/assets/images/favicon/site.webmanifest" />
+  <link href="./style.css" rel="stylesheet">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -123,10 +124,19 @@
 
         <span class="font-bold my-2">OR</span>
 
-        <a href="./assets/images/qr-code.svg" target="_blank">
-          <img alt="Scan the QR code to download the app from the App" loading="lazy" width="160" height="160"
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlbuOyiohoGkkXVJcTLIvLYIK5Wgx2eSPAlbZ-7ePueFreBw/viewform?usp=dialog"
+          target="_blank" class="py-4 px-8 rounded-full text-xl transition get-link-by-email">
+          Get Link by Email
+        </a>
+      </div>
+
+      <div class="flex flex-col items-center qr-code-container">
+        <a href="./assets/images/qr-code.svg" target="_blank" class="mb-3">
+          <img alt="Scan the QR code to download the app from the App" loading="lazy" width="250" height="250"
             decoding="async" data-nimg="1" src="./assets/images/qr-code.svg" class="border border-gray-200 rounded-xl">
         </a>
+
+        <span>You can also scan the QR code</span>
       </div>
     </div>
   </section>
